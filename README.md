@@ -1,3 +1,1 @@
-# Neetcode
-
 Notes for Neetcode
