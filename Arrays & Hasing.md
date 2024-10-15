@@ -1,0 +1,219 @@
+# 1. Contains Duplicate
+
+### Time and Space Complexity
+
+| Method | Time - O(n) | Space - O(n) |
+|--- |--- | --- | 
+| Brute Force | n^2 | 1 |
+| Sort | nlogn | 1 |
+| HashSet | n | n |
+
+### Key Approach
+
+N/A
+
+### [Help](#hints)
+
+# 2. Valid Anagram
+
+### Time and Space Complexity
+| Method | Time - O(n) | Space - O(n) | 
+|--- |--- |--- | 
+| HashMap | s + t | s + t | 
+| Array | s + t | s + t |
+
+### Two Solutions
+
+
+#### Hash Map
+- Char : Occur
+- `get(char, defVal)`
+
+#### Array
+- 26-Length Array
+- `ord("a")`
+
+### Key Approach
+
+| Method | Description | Example | 
+|--- |--- |--- | 
+| get | Returns value of the specified key, else returns 2nd argument | `dict = {a: 3}` <br /> `dict.get("a", 2) >> 3` | 
+| ord | Returns the integer that represents the char argument | `ord("a") >> 97` <br /> `ord("b") >> 98` | 
+
+### [Help](#hints)
+
+# 3. Two Sum
+
+### Time and Space Complexity
+
+| Method | Time - O(n) | Space - O(n) | 
+|--- |--- |--- | 
+| Brute Force | n^2 | 1 | 
+| HashMap | n | n |
+
+### Key Approach
+
+| Method | Description | Example | 
+|--- |--- |--- | 
+| `enumerate(iterable)` | Returns pairs of index and element | `strs = ["cat", "bat", "act"]` <br /> `for idx, str in enumerate(strs)` | 
+
+### [Help](#hints)
+
+# 4. Group Anagrams
+
+### Time and Space Complexity
+
+| Method | Time - O(n) | Space - O(n) | 
+|--- |--- |--- | 
+| Brute Force | n^2 | n | 
+| Sort | nlogn | 1 |
+| HashMap | n | n |
+
+### Key Approach
+
+| Method | Description | Example | 
+|--- |--- |--- | 
+| `defaultdict(arg)` | Provides the default value for new keys, accroding to the argument <br /> `int: 0`, `list: []`, `str: ''` | `dict = defaultdict(list)` <br/> `dict['e.g.'].append(3)` <br /> `>> [3] `| 
+
+### [Help](#hints)
+
+# 5. Top K Frequent Elements
+
+### Time and Space Complexity
+
+| Method | Time - O(n) | Space - O(n) | 
+|--- |--- |--- | 
+| Sort | nlogn | n |
+| HashMap | n | n |
+
+### Key Approach
+
+| Method | Description | Example | 
+|--- |--- |--- | 
+| Bucket Sort | Divides elements of an array into buckets | Sorting by occurance |
+| `dict.items()` | Similar to enumerate | `for key, val in dict.items()`| 
+
+### [Help](#hints)
+
+# 6. Encode and Decode Strings
+
+### Time and Space Complexity
+| Method | Time - O(n) | Space - O(n) | 
+|--- |--- |--- | 
+| Two pointer | | N/A |
+
+### Key Approach
+
+| Method | Description | Example | 
+|--- |--- |--- | 
+| `"".join()` | Joins strings | `"app".join(0 for x in range(3))` <br /> `>> app000 `| 
+| `f"{}"` | String formater | `month, day, year = "Oct", 4, 2024` <br /> `f"{month} {day}th, {year}"` <br /> `>> Oct 4th, 2024` |
+| Two pointer | Use two idx's | `for i in range(len(string)):` <br/> `	j = i` <br/> `	while j != '#':` | 
+
+### [Help](#hints)
+
+# 7. Product of Array Except Self
+
+### Time and Space Complexity
+| Method | Time - O(n) | Space - O(n) | 
+|--- |--- |--- | 
+| Brute Force | n^2 | 1 |
+| Array | n | 1* |
+
+* Use input and output array
+
+### Key Approach
+
+| Method | Description | Example | 
+|--- |--- |--- | 
+| Pre and Post Method | Find product of all elements before and after specified index | `[2, 3, 5, 6]`, `idx = 2` <br/> `>> pre = 6, post = 6`|
+
+### [Help](#hints)
+
+# 8. Valid Sudoku
+
+### Time and Space Complexity
+
+| Method | Time - O(n) | Space - O(n) | 
+|--- |--- |--- | 
+| Brute Force | n^2 | n |
+| Hashset | 9^2* | 9^2* |
+
+* Determined by dimensions of board
+
+### Key Approach
+
+| Method | Description | Example | 
+|--- |--- |--- | 
+| Divide idx by 3 | Divide row and column by 3 (as tuple keys) to break board into 3x3 blocks | `row, col = 2, 9` <br/> `set[(row//3, col//3)]` |
+
+### [Help](#hints)
+
+# 9. Longest Consecutive Sequence.md
+
+### Time and Space Complexity
+
+| Method | Time - O(n) | Space - O(n) | 
+|--- |--- |--- | 
+| Brute Force | n^2 | n |
+| Sorting | nlogn | n |
+| Hashset | n | n |
+
+### Key Approach
+
+| Method | Description | Example | 
+|--- |--- |--- | 
+| `max(int, int)` | Fastest way of checking greater of listed values | `n1, n2 = 7, -3` <br /> `max(n1, n2)` <br/> `>> n1 `|
+| Check if beginning of sequence | Check if `num-1` exists  | `if num-1 in set():` <br/> `  continue` |
+
+### [Help](#hints)
+
+
+
+
+
+
+
+
+
+
+
+
+# [Hints](#hints)
+
+### 1. 
+  - N/A
+
+### 2. 
+- Hash Map
+- `dict[char] = 1 + dict.get(char, 0)`
+
+- Array
+- `ord(char) - ord("a")`
+
+### 3. 
+- Fill dict with num and index at end
+![image](https://github.com/user-attachments/assets/e98e3273-e49e-4763-9ee6-6e57b707bbc6)
+
+### 4. 
+- `dict[key].append(value)`
+
+### 5. 
+- Use dict first (`element: freq`), fill bucket list
+- Decrement when filling ans array
+- ![image](https://github.com/user-attachments/assets/6804d1c6-6395-440c-ae20-11a825fe181f)
+
+### 6. 
+- Use two idx's, i and j
+- ![image](https://github.com/user-attachments/assets/2ae474b0-a20a-4f9a-b941-86328d9c42a7)
+
+### 7. 
+- Don't skip loops
+- ![image](https://github.com/user-attachments/assets/c03dc3f4-726e-4076-bd8b-08e82bd91de5)
+
+### 8. 
+- Check 3 conditions in if statement
+
+### 9. 
+- Check if beginning of sequence
+- Iterate through set, removes duplicates
